@@ -1,5 +1,11 @@
 <?php
 
+if (intval(explode(phpversion(), '.')[0]) < 8) {
+    function str_starts_with ( $haystack, $needle ) {
+        return strpos( $haystack , $needle ) === 0;
+    }
+}
+
 require_once __DIR__ . '/lib/bouncer.php';
 
 Kirby::plugin('sylvainjule/bouncer', [
