@@ -30,6 +30,12 @@ class Bouncer {
                 'title' => 'Logout',
                 'path'  => '/logout'
             ];
+            if ($user->role()->permissions()->for('access', 'komments')) {
+                $allowed[] = [
+                    'title' => 'Komments',
+                    'path'  => '/komments'
+                ];
+            }
         }
 
         return $allowed;
