@@ -1,6 +1,6 @@
 <?php
 
-if (intval(explode(phpversion(), '.')[0]) < 8) {
+if (intval(explode('.', phpversion())[0]) < 8) {
     function str_starts_with ( $haystack, $needle ) {
         return strpos( $haystack , $needle ) === 0;
     }
